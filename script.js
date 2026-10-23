@@ -13,7 +13,7 @@
    Veja o passo a passo para obtê-la na documentação do projeto.
    ---------------------------------------------------------- */
 const API_URL =
-  "https://api.themoviedb.org/3/trending/all/week?language=pt-BR&api_key=SUA_CHAVE_AQUI";
+  "https://api.themoviedb.org/3/trending/all/week?language=pt-BR&api_key=c072840352357132bf91d357e7ccbb5a";
 
 const IMAGEM_BASE = "https://image.tmdb.org/t/p/w500";
 
