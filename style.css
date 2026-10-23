@@ -145,6 +145,13 @@ a { color: var(--ambar); }
   border: 1px solid var(--linha);
 }
 
+/* Fallback quando a imagem do Início não é encontrada */
+.hero-imagem.falhou {
+  background:
+    radial-gradient(circle at 30% 30%, rgba(232, 163, 61, 0.25), transparent 60%),
+    var(--superficie);
+}
+
 .valores {
   display: grid;
   grid-template-columns: 1fr;

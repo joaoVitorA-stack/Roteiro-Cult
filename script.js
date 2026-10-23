@@ -146,8 +146,8 @@ function criarCard(titulo) {
   const corpo = document.createElement("div");
   corpo.className = "card-corpo";
 
-  const titulo3 = document.createElement("h3");
-  titulo3.textContent = titulo.titulo;
+  const nomeTitulo = document.createElement("h3");
+  nomeTitulo.textContent = titulo.titulo;
 
   const meta = document.createElement("p");
   meta.className = "meta";
@@ -158,7 +158,7 @@ function criarCard(titulo) {
   nota.className = "nota";
   nota.textContent = `Nota: ${titulo.nota}`;
 
-  corpo.append(titulo3, meta, nota);
+  corpo.append(nomeTitulo, meta, nota);
   card.appendChild(corpo);
 
   return card;
@@ -260,6 +260,16 @@ function mostrarMensagem(texto, tipo) {
   mensagemForm.textContent = texto;
   mensagemForm.className = `mensagem ${tipo}`;
 }
+
+/* ----------------------------------------------------------
+   IMAGEM ILUSTRATIVA DO INÍCIO
+   Se imagens/hero.jpg não existir, mostra um bloco de cor
+   em vez de um ícone de imagem quebrada.
+   ---------------------------------------------------------- */
+const imagemHero = document.querySelector(".hero-imagem");
+imagemHero.addEventListener("error", () => {
+  imagemHero.classList.add("falhou");
+});
 
 /* ----------------------------------------------------------
    INICIALIZAÇÃO
