@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quadro a Quadro | Guia de Filmes e Séries</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topo">
+    <a href="#inicio" class="marca" data-secao="inicio">Quadro a Quadro</a>
+    <nav class="menu" aria-label="Menu principal">
+      <a href="#inicio" data-secao="inicio" class="ativo">Início</a>
+      <a href="#listagem" data-secao="listagem">Listagem</a>
+      <a href="#cadastro" data-secao="cadastro">Cadastro</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- SEÇÃO 1: INÍCIO -->
+    <section id="inicio" class="secao ativa">
+      <div class="hero">
+        <div class="hero-texto">
+          <p class="frase">Cada título tem o seu momento. Encontre o próximo.</p>
+          <h1>Quadro a Quadro</h1>
+          <p>Um guia para descobrir filmes e séries com indicações claras e dados reais, de forma simples e sem rolagem infinita.</p>
+          <a href="#listagem" data-secao="listagem" class="botao">Ver títulos</a>
+        </div>
+        <!-- Substitua o arquivo abaixo por uma imagem sua (pasta imagens/) -->
+        <img src="imagens/hero.jpg" alt="Poltronas de uma sala de cinema com a tela ao fundo" class="hero-imagem">
+      </div>
+
+      <div class="valores">
+        <article>
+          <h2>Missão</h2>
+          <p>Ajudar o público a encontrar o próximo filme ou série ideal, com indicações fáceis de explorar.</p>
+        </article>
+        <article>
+          <h2>Visão</h2>
+          <p>Ser o guia de referência para quem gosta de cinema e séries, do primeiro título à maratona.</p>
+        </article>
+        <article>
+          <h2>Valores</h2>
+          <ul>
+            <li>Curadoria honesta</li>
+            <li>Informação clara</li>
+            <li>Respeito ao gosto de cada um</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 2: LISTAGEM (API) -->
+    <section id="listagem" class="secao">
+      <header class="cabecalho-secao">
+        <h2>Em alta nesta semana</h2>
+        <p>Dados carregados da API do TMDB.</p>
+      </header>
+      <div id="estado-listagem" class="estado" role="status" aria-live="polite"></div>
+      <div id="grade" class="grade"></div>
+    </section>
+
+    <!-- SEÇÃO 3: CADASTRO -->
+    <section id="cadastro" class="secao">
+      <header class="cabecalho-secao">
+        <h2>Indique um título</h2>
+        <p>Seu cadastro aparece no início da listagem. Ele fica disponível até a página ser recarregada.</p>
+      </header>
+
+      <form id="form-cadastro" novalidate>
+        <div class="campo">
+          <label for="titulo">Título <span>*</span></label>
+          <input type="text" id="titulo" name="titulo" placeholder="Ex.: Cidade de Deus">
+          <small class="erro-campo" data-erro="titulo"></small>
+        </div>
+
+        <div class="campo">
+          <label for="tipo">Tipo <span>*</span></label>
+          <select id="tipo" name="tipo">
+            <option value="">Selecione</option>
+            <option value="Filme">Filme</option>
+            <option value="Série">Série</option>
+          </select>
+          <small class="erro-campo" data-erro="tipo"></small>
+        </div>
+
+        <div class="campo">
+          <label for="genero">Gênero <span>*</span></label>
+          <input type="text" id="genero" name="genero" placeholder="Ex.: Drama">
+          <small class="erro-campo" data-erro="genero"></small>
+        </div>
+
+        <div class="campo">
+          <label for="ano">Ano de lançamento</label>
+          <input type="number" id="ano" name="ano" placeholder="Ex.: 2002" min="1888">
+          <small class="erro-campo" data-erro="ano"></small>
+        </div>
+
+        <div class="campo">
+          <label for="nota">Nota (0 a 10) <span>*</span></label>
+          <input type="number" id="nota" name="nota" step="0.1" min="0" max="10" placeholder="Ex.: 8.5">
+          <small class="erro-campo" data-erro="nota"></small>
+        </div>
+
+        <div class="campo campo-largo">
+          <label for="sinopse">Sinopse curta</label>
+          <textarea id="sinopse" name="sinopse" rows="3" placeholder="Uma frase sobre o título"></textarea>
+        </div>
+
+        <div class="acoes">
+          <button type="submit" class="botao">Cadastrar título</button>
+          <p id="mensagem-form" class="mensagem" role="alert"></p>
+        </div>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    <p>Quadro a Quadro · Projeto de Sistemas Web II</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
